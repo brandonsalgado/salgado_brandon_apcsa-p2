@@ -24,7 +24,10 @@ public class WordsCompareRunner
 	   out.println("Enter next word: ");
 	   String w2 = keyboard.next();
 	   
-	   WordsCompare wdsComp = new 
+	   WordsCompare wdsComp = new WordsCompare(w1, w2);
+	   wdsComp.compare();
+	   out.println(wdsComp.toString());
+	   
 	   
 	   
 	}
