@@ -29,10 +29,12 @@ public class LetterRemover
 	{
 		String cleaned = sentence;
 		char c;
+		int loc = cleaned.indexOf(lookFor);
 		
-		while (sentence.contains(lookFor) == true)
+		while (loc > -1)
 		{
-			sentence.replace(lookFor, c);
+			cleaned = cleaned.substring(0, loc) + cleaned.substring(loc + 1);
+			loc = cleaned.indexOf(lookFor);
 		}
 		
 		return cleaned;
@@ -40,6 +42,6 @@ public class LetterRemover
 
 	public String toString()
 	{
-		return sentence + " - letter to remove " + lookFor + removeLetters();
+		return sentence + " - letter to remove " + lookFor + "\n" + removeLetters();
 	}
 }

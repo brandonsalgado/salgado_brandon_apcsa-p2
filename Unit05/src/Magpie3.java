@@ -45,6 +45,30 @@ public class Magpie3
 		{
 			response = "Tell me more about your family.";
 		}
+		else if (findKeyword(statement, "dog") >=0 || findKeyword(statement, "cat") >= 0)
+		{
+			response = "Tell me more about your pets.";
+		}
+		else if (findKeyword(statement, "Mauro") >= 0)
+		{
+			response = "Oh I love Tony Mauro!";
+		}
+		else if (findKeyword(statement, "sicko mode") >= 0)
+		{
+			response = "That song is trash. They should have played Sweet Victory";
+		}
+		else if (findKeyword(statement, "lacrosse") >= 0)
+		{
+			response = "Lacrosse, you mean the best sport?";
+		}
+		else if (findKeyword(statement, "smash") >= 0)
+		{
+			response = "I main Ike";
+		}
+		else if (findKeyword(statement, "no") >= 0)
+		{
+			response = "Why so negative?";
+		}	
 		else
 		{
 			response = getRandomResponse();
@@ -134,6 +158,7 @@ public class Magpie3
 	 */
 	private int findKeyword(String statement, String goal)
 	{
+				
 		return findKeyword(statement, goal, 0);
 	}
 
