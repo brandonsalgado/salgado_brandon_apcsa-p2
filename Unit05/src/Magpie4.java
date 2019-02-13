@@ -80,6 +80,10 @@ public class Magpie4
 		{
 			response = transformIWantToStatement(statement);
 		}
+		else if (findKeyword(statement, "I", 0) >= 0 && findKeyword(statement, "you", 0) >= 0)
+		{
+			response = transformIYouStatement(statement);
+		}
 
 		else
 		{
@@ -133,6 +137,20 @@ public class Magpie4
 		
 		return "Would you really be happy if you had " + rest;
 	}
+	
+	private String transformIYouStatement(String statement)
+	{
+		statement = statement.trim();
+		
+		int psn = findKeyword(statement, "I", 0);
+		int psn2 = findKeyword(statement, "you", 0);
+		
+		String rest = statement.substring(psn, psn2).trim();		
+		
+		
+		return "Why do you " + rest + " me?";
+	}
+
 	
 	/**
 	 * Take a statement with "you <something> me" and transform it into 

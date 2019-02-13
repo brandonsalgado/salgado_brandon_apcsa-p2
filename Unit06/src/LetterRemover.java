@@ -27,8 +27,7 @@ public class LetterRemover
 
 	public String removeLetters()
 	{
-		String cleaned = sentence;
-		char c;
+		String cleaned = sentence.trim();
 		int loc = cleaned.indexOf(lookFor);
 		
 		while (loc > -1)

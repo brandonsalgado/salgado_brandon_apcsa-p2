@@ -13,13 +13,14 @@ public class LetterRemoverRunner
 		Scanner keyboard = new Scanner(System.in);
 		
 		out.println("Enter sentence: ");
-		String s = keyboard.next();
+		String s = keyboard.nextLine();
 		out.println("Enter character: ");
 		String str = keyboard.next();
 		char rem = str.charAt(0);
 		
 		LetterRemover LetRem = new LetterRemover(s, rem);
-		
+		LetRem.removeLetters();
+		out.println(LetRem);
 		
 	}
 }
