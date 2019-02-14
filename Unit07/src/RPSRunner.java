@@ -16,13 +16,13 @@ public class RPSRunner
 		
 			String player = "";
 		
-			out.print("type in your prompt [R,P,S] :: ");
+			out.print("Choose [R,P,S] :: ");
 			String res = keyboard.next();
-			response = res.charAt(0);
 			
 			//read in the player value
 		
-			RockPaperScissors game = new RockPaperScissors(response);		
+			RockPaperScissors game = new RockPaperScissors(res);
+			out.println(game);
 	}
 }
 

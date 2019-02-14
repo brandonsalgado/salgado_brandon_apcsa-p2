@@ -29,6 +29,7 @@ public class RockPaperScissors
 		case 1 : compChoice = "P";
 		case 2 : compChoice = "S";
 		}
+		
 	}
 
 	public String determineWinner()
@@ -45,14 +46,49 @@ public class RockPaperScissors
 			{
 				winner = "Computer";
 			}
+			else if (compChoice.equals("S"))
+			{
+				winner = "Player";
+			}
 		}
+		if (playChoice.equals("P"))
+		{
+			if (compChoice.equals("R"))
+			{
+				winner = "Player";
+			}
+			else if (compChoice.equals("P"))
+			{
+				winner = "Neither, it's a draw";
+			}
+			else if (compChoice.equals("S"))
+			{
+				winner = "Computer";
+			}
+		}
+		if (playChoice.equals("S"))
+		{
+			if (compChoice.equals("R"))
+			{
+				winner = "Computer";
+			}
+			else if (compChoice.equals("P"))
+			{
+				winner = "Player";
+			}
+			else if (compChoice.equals("S"))
+			{
+				winner = "Neither, it's a draw";
+			}
+		}
+
 		
 		return winner;
 	}
 
 	public String toString()
 	{
-		String output="";
+		String output= "Computer chose: " + compChoice + "\n" + "Winner: " + determineWinner();
 		return output;
 	}
 }
