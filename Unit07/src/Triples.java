@@ -61,6 +61,7 @@ public class Triples
 								greatestCommonFactor(i, j, k);
 								if (gcd == 1)
 								{
+									
 									output += i + " " + j + " " + k + "\n";
 								}
 							}
