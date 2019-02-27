@@ -30,14 +30,24 @@ public class DeckTester {
 		Deck deck3 = new Deck(ranks3, suits3, val3);
 		
 		System.out.println(deck1);
+		System.out.println(deck1.size());
+		System.out.println(deck1.isEmpty());
+		System.out.println(deck1.deal());
 		System.out.println(deck2);
+		System.out.println(deck2.size());
+		System.out.println(deck2.isEmpty());
+		System.out.println(deck2.deal());
 		System.out.println(deck3);
-		System.out.println(deck1.size() + " " + deck2.size() + " " + deck3.size());
-		System.out.println(deck1.deal() + " " + deck2.deal() + " " + deck3.deal() + " " + deck3.deal());
-		
-		
-		
-		
+		System.out.println(deck3.size());
+		System.out.println(deck3.isEmpty());
+		System.out.println(deck3.deal());
+		System.out.println(deck3.deal());
+		System.out.println(deck3.deal());
+		System.out.println(deck3.deal());
+		System.out.println(deck3.deal());
+		System.out.println(deck3.deal());
+		System.out.println(deck3.isEmpty());
+
 		
 	}
 }

@@ -37,14 +37,18 @@ public class Deck
 	{
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
 		
+		card = new Card[ranks.length*suits.length];
 		
-		
-		for(int i = 0; i < suits.length; i++)
+		for(int i = 0; i < card.length; i=i)
 		{
-			for (int j = 0; j < suits.length; j++)
+			for (int j = 0; j < ranks.length; j++)
 			{
-				card[j] = new Card(ranks[j], suits[i], values[j]);
-				size++;
+				for (int k = 0; k < suits.length; k++)
+				{
+					card[i] = new Card(ranks[j], suits[k], values[j]);
+					i++;
+					size++;
+				}
 			}
 		}
 		shuffle();
@@ -60,7 +64,7 @@ public class Deck
 	public boolean isEmpty() 
 	{
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
-		if (card.length >= 0)
+		if (size > 0)
 		{
 			return false;
 		}
@@ -100,8 +104,10 @@ public class Deck
 			size--;
 			return card[size];
 		}
-		return null;
-		
+		else
+		{
+			return null;
+		}
 	}
 
 	/**
@@ -113,7 +119,7 @@ public class Deck
 	{
 		String rtn = "size = " + size + "\nUndealt cards: \n";
 
-		for (int k = size - 1; k >= 0; k--) 
+		for (int k = size() - 1; k >= 0; k--) 
 		{
 			rtn = rtn + card[k];
 			if (k != 0) {
