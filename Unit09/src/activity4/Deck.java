@@ -14,8 +14,8 @@ public class Deck
 	/**
 	 * cards contains all the cards in the deck.
 	 */
-	//private List<Card> cards;
-	private Card[] card;
+	private List<Card> card;
+	//private Card[] card;
 
 	/**
 	 * size is the number of not-yet-dealt cards.
@@ -35,7 +35,30 @@ public class Deck
 	 */
 	public Deck(String[] ranks, String[] suits, int[] values) 
 	{
-		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
+		// *** TO BE IMPLEMENTED IN ACTIVITY 2 *** 
+		
+		card = new ArrayList<Card>();
+		
+		for(int i = 0; i < ranks.length*suits.length; i=i)
+		{
+			for (int j = 0; j < ranks.length; j++)
+			{
+				for (int k = 0; k < suits.length; k++)
+				{
+					card.add(new Card(ranks[j], suits[k], values[j]));
+					i++;
+					size++;
+				}
+			}
+		}
+		shuffle();
+		
+		
+	}
+	
+	/*public Deck(String[] ranks, String[] suits, int[] values) 
+	{
+		// *** TO BE IMPLEMENTED IN ACTIVITY 2 *** 
 		
 		card = new Card[ranks.length*suits.length];
 		
@@ -55,7 +78,7 @@ public class Deck
 		
 		
 	}
-
+*/
 
 	/**
 	 * Determines if this deck is empty (no undealt cards).
@@ -78,16 +101,17 @@ public class Deck
 	public int size() 
 	{
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
-		return card.length;
+		//return card.length;
+		return card.size();
 	}
 
 	/**
 	 * Randomly permute the given collection of cards
 	 * and reset the size to represent the entire deck.
 	 */
-	public void shuffle() 
+	/*public void shuffle() 
 	{
-		/* *** TO BE IMPLEMENTED IN ACTIVITY 4 *** */
+		// *** TO BE IMPLEMENTED IN ACTIVITY 4 *** 
 		
 		Card[] cardTemp = card;
 		
@@ -100,15 +124,32 @@ public class Deck
 		}
 		size = card.length;
 	}
-
+	*/
+	public void shuffle() 
+	{
+		/* *** TO BE IMPLEMENTED IN ACTIVITY 4 *** */
+		
+		List<Card> cardTemp = new ArrayList<Card>();
+		cardTemp = card;
+		
+		
+		for (int i = card.size() - 1; i > 0; i--)
+		{
+			int rand = (int)(Math.random() * card.size());
+			card.set(i, cardTemp.get(rand));
+			card.set(rand, cardTemp.get(i));
+			
+		}
+		size = card.size();
+	}
 	/**
 	 * Deals a card from this deck.
 	 * @return the card just dealt, or null if all the cards have been
 	 *         previously dealt.
 	 */
-	public Card deal() 
+	/*public Card deal() 
 	{
-		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
+		// *** TO BE IMPLEMENTED IN ACTIVITY 2 *** 
 		if (size > 0)
 		{
 			size--;
@@ -119,13 +160,27 @@ public class Deck
 			return null;
 		}
 	}
-
+	*/
+	
+	public Card deal() 
+	{
+		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
+		if (size > 0)
+		{
+			size--;
+			return card.get(size);
+		}
+		else
+		{
+			return null;
+		}
+	}
 	/**
 	 * Generates and returns a string representation of this deck.
 	 * @return a string representation of this deck.
 	 */
-	@Override
-	public String toString() 
+	//@Override
+	/*public String toString() 
 	{
 		String rtn = "size = " + size + "\nUndealt cards: \n";
 
@@ -146,6 +201,44 @@ public class Deck
 		for (int k = size() - 1; k >= size; k--) 
 		{
 			rtn = rtn + card[k];
+			if (k != size) 
+			{
+				rtn = rtn + ", ";
+			}
+			if ((k - size()) % 2 == 0) 
+			{
+				// Insert carriage returns so entire deck is visible on console.
+				rtn = rtn + "\n";
+			}
+		}
+
+		rtn = rtn + "\n";
+		return rtn;
+	}
+	*/
+	
+	@Override
+	public String toString() 
+	{
+		String rtn = "size = " + size + "\nUndealt cards: \n";
+
+		for (int k = size() - 1; k >= 0; k--) 
+		{
+			rtn = rtn + card.get(k);
+			if (k != 0) {
+				rtn = rtn + ", ";
+			}
+			if ((size - k) % 2 == 0) 
+			{
+				// Insert carriage returns so entire deck is visible on console.
+				rtn = rtn + "\n";
+			}
+		}
+
+		rtn = rtn + "\nDealt cards: \n";
+		for (int k = size() - 1; k >= size; k--) 
+		{
+			rtn = rtn + card.get(k);
 			if (k != size) 
 			{
 				rtn = rtn + ", ";
