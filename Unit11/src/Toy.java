@@ -22,12 +22,13 @@ public class Toy
 	
 	public int getCount()
 	{
+		
 		return count;
 	}
 	
 	public void setCount( int cnt )
 	{
-		count = cnt;
+		count += cnt;
 	}
 	
 	public String getName()
