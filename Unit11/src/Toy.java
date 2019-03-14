@@ -7,12 +7,12 @@ import static java.lang.System.*;
 public class Toy
 {
 	private String name;
-	private int count;
+	private int count = 1;
 
 	public Toy()
 	{
 		name = "";
-		count = 0;
+		count = 1;
 	}
 
 	public Toy( String nm )
@@ -43,6 +43,6 @@ public class Toy
 
 	public String toString()
 	{
-	   return "";
+	   return getName() + " " + getCount();
 	}
 }

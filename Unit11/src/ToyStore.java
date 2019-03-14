@@ -22,7 +22,7 @@ public class ToyStore
 	{
 		String[] toyStr = toys.split(" ", 0);
 		toyList.add(new Toy(toyStr[0]));
-		for (int i = 0; i < toyStr.length; i++)
+		for (int i = 1; i < toyStr.length; i++)
 		{
 				for (int j = 0; j < toyList.size(); j++)
 				{
