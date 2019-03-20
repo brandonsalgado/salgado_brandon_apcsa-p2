@@ -34,9 +34,20 @@ public class MonsterRunner
 		Skeleton Mon2 = new Skeleton(nm, sz);
 		
 		
-		System.out.println(Mon1);
-		System.out.println(Mon2);
+		System.out.println("Monster 1 - " + Mon1);
+		System.out.println("Monster 2 - " + Mon2);
 		//smaller samename
+		
+		if (Mon1.isSmaller(Mon2))
+			System.out.println("Monster1 is smaller than Monster2");
+		else if (Mon2.isSmaller(Mon1))
+			System.out.println("Monster2 is smaller than Monster 1");
+		
+		if (Mon1.namesTheSame(Mon2))
+			System.out.println("Monster1 and Monster2 have the same name");
+		else
+			System.out.println("Monster1 and Monster2 have different names");
+		
 		
 	}
 }
