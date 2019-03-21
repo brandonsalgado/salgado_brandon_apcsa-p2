@@ -29,7 +29,7 @@ public class ElevensBoard extends Board {
 	 * The values of the cards for this game to be sent to the deck.
 	 */
 	private static final int[] POINT_VALUES =
-		{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 0, 0, 0};
+		{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13};
 
 	/**
 	 * Flag used to control debugging print statements.
@@ -59,17 +59,14 @@ public class ElevensBoard extends Board {
 
 		if (selectedCards.size() == 2)
 		{
-			if ((POINT_VALUES[selectedCards.get(0)] + POINT_VALUES[selectedCards.get(1)]) == 11)
+			if (containsPairSum11(selectedCards))
 			{
 				return true;
 			}
 		}
-		else if (selectedCards.size() == 3)
+		else if (containsJQK(selectedCards))
 		{
-			if ((selectedCards.get(0) + selectedCards.get(1) + selectedCards.get(2)) == 33)
-			{
-				return true;
-			}
+			return true;
 		}	
 		return false;
 	}
@@ -114,7 +111,7 @@ public class ElevensBoard extends Board {
 		{
 			for (int j = 0; j < selectedCards.size(); j++)
 			{
-				if ((selectedCards.get(i) + selectedCards.get(j)) == 11)
+				if ((cardAt(selectedCards.get(i)).pointValue() + cardAt(selectedCards.get(j)).pointValue()) == 11)
 				{
 					return true;
 				}
@@ -138,11 +135,11 @@ public class ElevensBoard extends Board {
 		
 		for (int i = 0; i < selectedCards.size(); i++)
 		{
-			if (selectedCards.get(i) > 9 && selectedCards.get(i) < 13)
-			{
-				sum += selectedCards.get(i);
-			}
+			//if (cardAt(selectedCards.get(i)).pointValue() > 9 && cardAt(selectedCards.get(i)).pointValue() < 13)
+			//{
+				sum += cardAt(selectedCards.get(i)).pointValue();
+			//}
 		}
-		return sum == 33;
+		return sum == 36;
 	}
 }

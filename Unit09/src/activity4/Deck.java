@@ -39,18 +39,18 @@ public class Deck
 		
 		card = new ArrayList<Card>();
 		
-		for(int i = 0; i < ranks.length*suits.length; i=i)
-		{
+		//for(int i = 0; i < ranks.length*suits.length; i=i)
+		//{
 			for (int j = 0; j < ranks.length; j++)
 			{
 				for (int k = 0; k < suits.length; k++)
 				{
 					card.add(new Card(ranks[j], suits[k], values[j]));
-					i++;
+					//i++;
 					size++;
 				}
 			}
-		}
+		//}
 		shuffle();
 		
 		
@@ -123,21 +123,23 @@ public class Deck
 			
 		}
 		size = card.length;
-	}
-	*/
+	}*/
+	
 	public void shuffle() 
 	{
-		/* *** TO BE IMPLEMENTED IN ACTIVITY 4 *** */
+		// *** TO BE IMPLEMENTED IN ACTIVITY 4 *** 
 		
-		List<Card> cardTemp = new ArrayList<Card>();
-		cardTemp = card;
+		//List<Card> cardTempA = new ArrayList<Card>();
+		//cardTempA = card;
 		
+		Card tempC;
 		
 		for (int i = card.size() - 1; i > 0; i--)
 		{
 			int rand = (int)(Math.random() * card.size());
-			card.set(i, cardTemp.get(rand));
-			card.set(rand, cardTemp.get(i));
+			tempC = card.get(i);
+			card.set(i, card.get(rand));
+			card.set(rand, tempC);
 			
 		}
 		size = card.size();
