@@ -12,8 +12,15 @@ public class GridRunner
 {
 	public static void main( String args[] ) throws IOException
 	{
-		String[] vals = {"a", "1", "6", "f", "8"};
-		Grid g = new Grid(4, 4, vals);
+		String[] vals = {"a", "b", "c", "7", "9", "x", "2"};
+		Grid g = new Grid(10, 10, vals);
 		System.out.println(g);
+		
+		for (int i = 0; i < vals.length; i++)
+		{
+			System.out.println(vals[i] + " occurs: " + g.countVals(vals[i]));
+		}
+		
+		System.out.println(g.findMax(vals));
 	}
 }

@@ -25,15 +25,38 @@ public class Grid
 	//find out which of the vals occurs the most
 	public String findMax(String[] vals)
 	{
+		int max = 0;
+		int count = 0;
+		String maxN = "";
 		
-		return "nothing yet";
+		for (int i = 0; i < vals.length; i++)
+		{
+			if (countVals(vals[i]) > max)
+			{
+				max = countVals(vals[i]);
+				maxN = vals[i];
+			}
+		}
+		
+		return maxN + " occurs the most";
 	}
 
 	//returns a count of how many times val occurs in the matrix
-	private int countVals( String val )
+	public int countVals( String val )
 	{
+		int count = 0;
 		
-		return 0;
+		for (int i = 0; i < grid.length; i++)
+		{
+			for (int j = 0; j < grid[i].length; j++)
+			{
+				if (grid[i][j].equals(val))
+				{
+					count++;
+				}
+			}
+		}
+		return count;
 	}
 
 	//display the grid

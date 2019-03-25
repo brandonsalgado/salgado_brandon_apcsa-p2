@@ -102,7 +102,8 @@ public class Deck
 	{
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
 		//return card.length;
-		return card.size();
+		//return card.size();
+		return size;
 	}
 
 	/**
