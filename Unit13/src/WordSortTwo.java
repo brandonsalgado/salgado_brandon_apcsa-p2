@@ -17,15 +17,32 @@ public class WordSortTwo
 
 	public void sort()
 	{
+		String temp;
+		
 		for (int i = 0; i < wordRay.length; i++)
 		{
-			
+			for (int j = 0; j < wordRay.length; j++)
+			{
+				if (wordRay[i].compareTo(wordRay[j]) > 0 && j > i)
+				{
+					temp = wordRay[i];
+					wordRay[i] = wordRay[j];
+					wordRay[j] = temp;
+				}
+			}
 		}
 	}
 
 	public String toString()
 	{
 		String output="";
+		
+		for (int i = 0; i < wordRay.length; i++)
+		{
+			output += wordRay[i];
+			output += "\n";
+		}
+		
 		return output+"\n\n";
 	}
 }
