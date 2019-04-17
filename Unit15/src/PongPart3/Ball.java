@@ -15,7 +15,7 @@ public class Ball extends Block
 	public Ball()
 	{
 		super(200,200);
-		xSpeed = 3;
+		xSpeed = 2;
 		ySpeed = 1;
 	}
 
@@ -51,6 +51,22 @@ public class Ball extends Block
 	public int getYS()
 	{
 		return ySpeed;
+	}
+	public int getX()
+	{
+		return super.getX();
+	}
+	public int getY()
+	{
+		return super.getY();
+	}
+	public int getWidth()
+	{
+		return super.getWidth();
+	}
+	public int getHeight()
+	{
+		return super.getHeight();
 	}
    //add the set methods
    
