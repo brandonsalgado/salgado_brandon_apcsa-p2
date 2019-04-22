@@ -146,6 +146,7 @@ public class Block implements Locatable
 	{
 		return color;
 	}
+
    //add the other get methods
     
 

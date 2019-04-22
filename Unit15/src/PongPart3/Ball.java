@@ -69,7 +69,6 @@ public class Ball extends Block
 		return super.getHeight();
 	}
    //add the set methods
-   
 
    public void moveAndDraw(Graphics window)
    {
