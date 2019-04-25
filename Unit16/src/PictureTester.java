@@ -38,9 +38,22 @@ public class PictureTester
   /** Method to test the collage method */
   public static void testCollage()
   {
-    Picture canvas = new Picture("640x480.jpg");
-    canvas.createCollage();
-    canvas.explore();
+    //Picture canvas = new Picture("640x480.jpg");
+    //canvas.createCollage();
+    //canvas.explore();
+	  Picture collag = new Picture("beach.jpg");
+	  collag.myCollage();
+	  collag.mirrorVertical();
+	  collag.explore();
+	  collag = new Picture("beach.jpg");
+	  collag.myCollage();
+	  collag.mirrorHorizontal();
+	  collag.explore();
+	  collag = new Picture("beach.jpg");
+	  collag.myCollage();
+	  collag.keepOnlyBlue();
+	  collag.explore();
+	  
   }
   
   /** Method to test edgeDetection */
@@ -106,6 +119,46 @@ public class PictureTester
 	  beach.mirrorHorizontal();
 	  beach.explore();
   }
+  public static void testMirrorHorizontalBotToTop()
+  {
+	  Picture beach = new Picture("beach.jpg");
+	  beach.explore();
+	  beach.mirrorHorizontalBotToTop();
+	  beach.explore(); 
+  }
+  public static void testMirrorArms()
+  {
+	  Picture snow = new Picture("snowman.jpg");
+	  snow.explore();
+	  snow.mirrorArms();
+	  snow.explore();
+  }
+  public static void testMirrorGull()
+  {
+	  Picture gull = new Picture("seagull.jpg");
+	  gull.explore();
+	  gull.mirrorGull();
+	  gull.explore();
+  }
+  public static void testCopy()
+  {
+	  Picture canvas = new Picture("seagull.jpg");
+	  Picture copy = new Picture("snowman.jpg");
+	  canvas.copy(copy, 100, 100, 100, 150, 200, 250);
+	  canvas.explore();
+  }
+  public static void testMirrorDiagonal()
+  {
+	  Picture beach = new Picture("beach.jpg");
+	  beach.mirrorDiagonal();
+	  beach.explore();
+  }
+  public static void testEdgeDetection2()
+  {
+	  Picture swan = new Picture("swan.jpg");
+	  swan.edgeDetection2(10);
+	  swan.explore();
+  }
   /** Main method for testing.  Every class can have a main
     * method in Java */
   public static void main(String[] args)
@@ -123,7 +176,8 @@ public class PictureTester
     //testMirrorVertical();
     //testMirrorVerticalRightToLeft();
     //testMirrorTemple();
-	testMirrorHorizontal();
+	//testMirrorHorizontal();
+	//testMirrorHorizontalBotToTop();
     //testMirrorArms();
     //testMirrorGull();
     //testMirrorDiagonal();
